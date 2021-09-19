@@ -1,4 +1,7 @@
 import React from 'react'
+import Header from './components/Header'
+import Content from './components/Content'
+import Total from './components/Total'
 
 // Refactor the code so that it consists of three new components: Header, Content, and Total. 
 // All data still resides in the App component, which passes the necessary data to each component using props. 
@@ -6,36 +9,20 @@ import React from 'react'
 // Content  
 // Total 
 
-//Header - takes care of rendering the name of the course, 
-const Header = (props) => {
-  // const course = props.course
-  return (
-    <div>
-      {props.course}
-    </div>
-  )
-}
 
-//Content - renders the parts and their number of exercises
-const Content = (props) => {
-  return (
-    <div>
-      {props.part1} {props.exercises1}
-      {props.part2} {props.exercises2}
-      {props.part3} {props.exercises3}
-    </div>
-  )
-}
+// Refactor the Content component so that it does not render any names of parts or their number of exercises by itself. 
+// Instead it only renders three Part components of which each renders the name and number of exercises of one part.
+// const Part = () => {
+//   return (
+//     <div>
+//       {props.part1} {props.exercises1}
+//       {/* {props.part2} {props.exercises2}
+//       {props.part3} {props.exercises3} */}
+//     </div>
+//   )
+// }
 
-//Total - renders the total number of exercises.
-const Total = (props) => {
 
-  return (
-    <div>
-      {props.total}
-    </div>
-  )
-}
 
 const App = () => {
   const course = 'Half Stack application development'
@@ -52,13 +39,11 @@ const App = () => {
 
   return (
     <div>
-      <Header course={course} />
+      <Header course = {course}/>
 
-      <Content part1={part1} exercises1={exercises1}    />
-
-      <Content part2={part2} exercises2={exercises2}    />
-
-      <Content part3={part3} exercises3={exercises3}    />
+      <Content part1={part1} exercises1={exercises1}/>
+      <Content part2={part2} exercises2={exercises2} />
+      <Content part3={part3} exercises3={exercises3} />
 
       <Total total = {total}  />
     </div>
