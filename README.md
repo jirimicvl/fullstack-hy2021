@@ -1,5 +1,6 @@
-# fullstack-hy2021-part0
+part0
 
-# fullstack-hy2021-part1
+part1
+- 1.1: course information, step1
 
 rm -rf .git
